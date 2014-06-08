@@ -37,10 +37,11 @@ no ipv6 cef
 !
 multilink bundle-name authenticated
 !
-!
+!         
 cts logging verbose
 !
 !
+username cisco privilege 15 secret 5 $1$ZyKk$cUGltYX0seEJy1XUBhKkJ0
 !
 redundancy
 !
@@ -179,9 +180,10 @@ banner login ^C
 line con 0
  exec-timeout 0 0
 line aux 0
-line vty 0 4
- login
- transport input none
+line vty 0 5
+ exec-timeout 0 0
+ login local
+ transport input telnet
 !
 no scheduler allocate
 !
